@@ -5,10 +5,12 @@ function validar(){
     var nombrexp = /^[a-z ,.'-]+$/i;
     var apellidos = document.getElementById("apellidos").value;
     var edad = document.getElementById("edad").value;
+    var edadexp = /^[0-9]$/;
     var correo = document.getElementById("correo").value;
     var correoexp =/^[^@\s]+@[^@\.\s]+(\.[^@\.\s]+)+$/;  
     var especialidad = document.getElementById("especialidad").value;
     var fecha = document.getElementById("fecha").value;
+    var fechaexp = /^\d{2}[.-/]\d{2}[.-/]\d{4}$/; 
     var hora = document.getElementById("hora").value;
 
     if (rut === ""){
@@ -35,18 +37,20 @@ function validar(){
         alert("El apellido es muy largo");
         return false;
     }
-
     if (edad === ""){
         alert("Todos los campos son obligatorios");
         return false;
     }
     else if (edad.length>2){
-         //edadexp--exp regular para solo numero//
         alert("La edad es muy larga");
         return false;
     }
-    if (correo=== ""){
-        alert("Todos los campos son obligatorios");
+    else if (!edad.test(edadexp)){
+        alert("La edad no es válida");
+            return false;
+    }
+    if (correo === ""){
+        alert("El correo no es válida");
         return false;
     }
     else if (correo.length>100){
@@ -58,10 +62,13 @@ function validar(){
         return false;
     }
     if (fecha=== ""){
-        //fechaexp--exp regular para solo numero//
         alert("Todos los campos son obligatorios");
         return false;
     } 
+    else if( (!fecha.test(fechaexp)) ) {
+        alert("Formato dd-mm-yyyy");
+        return false;
+    }
 
     if (nombre != "" && apellidos){
         alert("Estimado(a)"+nombre+ "su hora para ha sido reservada para el día a las. Además, se le envió un mensaje a su correo con el detalle de su cita. Gracias por preferirnos.")
