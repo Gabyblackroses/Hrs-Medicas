@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Gabriela Paz">
+
     <title>Formulario de Horas Medicas</title>
 
     <link rel="stylesheet" href="estilos.css">
@@ -19,32 +19,29 @@
             <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" class="inputcss">
             <input type="text" id="edad" name="edad" placeholder="Edad" class="inputcss">
             <input type="email" id="correo" name="correo" placeholder="Email" class="inputcss">
-            <form name="fomul"> 
-                Especialidad Medica
-                <select name="Especialidad"> 
-                <option value="Traumatología">Traumatología
-                <option value="Dental" selected>Dental
-                <option value="Radiología">Radiología 
-                </select> 
-                <br> 
-                <br> 
-            </form>
+            <label for="especialidad">Especialidades Medicas:</label>
+            <select name="especialidad" id="especialidad">
+              <option value="Dental">Dental</option>
+              <option value="Radiología"selected>Radiología</option>
+              <option value="Traumatología">Traumatología</option>
+            </select>
+            </br>
+            </br>
             <input type="fecha" id="fecha" name="fecha" placeholder="Fecha (dd-mm-yyyy)" class="inputcss">
-            <form name="fomul"> 
-                Horas Disponibles
-                <select name="Horas"> 
-                <option value="09:00">09:00hrs
-                <option value="10:00" selected>10:00hrs
-                <option value="11:00">11:00hrs
-                <option value="12:00">12:00hrs
-                <option value="13:00">13:00hrs
-                </select> 
-            </form>
-            <input type="submit" value="Reservar" class="btn-enviar">
-
+            <label for="hora">Horas Disponibles:</label>
+            <select name="hora" id="hora">
+                <option value="09:00">09:00hrs</option>
+                <option value="10:00">10:00hrs</option>
+                <option value="11:00">11:00hrs</option>
+                <option value="12:00">12:00hrs</option>
+                <option value="13:00">13:00hrs</option>
+            </select>  
+            </br>
+            </br>
+            <input type="submit" value="Reservar" class="btn-enviar"> 
+            <p id="resultado"></p>
         </div>
     </form> 
-    
  <script type="text/javascript" src="formulario.js"></script>   
 </body>
 </html>
