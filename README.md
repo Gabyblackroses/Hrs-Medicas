@@ -1,1 +1,1 @@
- https://gabyblackroses.github.io/Hrs-Medicas/.
+ https://gabyblackroses.github.io/Hrs-Medicas/
